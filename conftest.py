@@ -3,7 +3,7 @@ import json
 import pytest
 from playwright.sync_api import sync_playwright
 
-from payloads.auth_payload import auth_payload
+from payloads.auth_payload import auth
 from payloads.booking_payload import create_booking_payload
 from utils.headers import header
 
@@ -21,7 +21,7 @@ def auth_token(api_request_context):
     response = api_request_context.post(
         "https://restful-booker.herokuapp.com/auth",
         headers=header(),
-        data=json.dumps(auth_payload())
+        data=json.dumps(auth())
     )
     return response.json()["token"]
 
