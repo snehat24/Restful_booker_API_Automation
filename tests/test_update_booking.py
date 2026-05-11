@@ -20,6 +20,6 @@ def test_update(api_request_context,auth_token,bookingid):
        , headers=auth(auth_token),
                                       data=json.dumps(payload))
  assert response.status == 200
- logger.info("validating status code:"+str(response.status_code))
+ logger.info("validating status code:"+str(response.status))
  assert "firstname" in response.json().keys()
  logger.info("validated firstname too"+str(response.json().keys()["firstname"]))

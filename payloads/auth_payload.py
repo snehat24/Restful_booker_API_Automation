@@ -1,3 +1,3 @@
-def auth_payload():
+def auth():
     return {"username": "admin",
      "password": "password123"}
